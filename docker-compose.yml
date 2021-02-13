@@ -7,6 +7,8 @@ services:
     command: "python main.py"
     ports:
       - 8001:5000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - .:/app
     depends_on:
@@ -32,3 +34,5 @@ services:
       - .dbdata:/var/lib/mysql
     ports:
       - 3307:3306
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
